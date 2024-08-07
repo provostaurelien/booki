@@ -13,11 +13,14 @@
     color: var(--main-color);
 }
 
+.fa-location-dot {
+    color: black;
+}
+
 body {
     display: flex;
     justify-content: center;
-
-    margin:0px
+    margin:0px /* défini pour coller à la maquette, aucune espace avec le navigateur ne semble exister*/
 }
 
 .main-container {
@@ -96,6 +99,13 @@ header img {
     border-top: 2px solid var(--main-color); /* Ajout de la barre bleue au dessus */
     padding-top: 28px; /* Ajoute un espace pour compenser le décalage d'écriture futile??? */
 }
+
+/* Style pour le main*/
+
+    main{
+        padding: 0px 50px ;
+    }
+
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
