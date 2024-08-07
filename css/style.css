@@ -13,14 +13,13 @@
     color: var(--main-color);
 }
 
-.fa-location-dot {
-    color: black;
-}
+
 
 body {
     display: flex;
     justify-content: center;
-    margin:0px /* défini pour coller à la maquette, aucune espace avec le navigateur ne semble exister*/
+    margin:0px 
+    /* défini pour coller à la maquette, aucune espace avec le navigateur ne semble exister*/
 }
 
 .main-container {
@@ -105,6 +104,50 @@ header img {
     main{
         padding: 0px 50px ;
     }
+
+    .fa-location-dot {
+        color: black;
+    }
+
+
+    .localisation {
+        background: var(--main-bg-color);  
+        border-top-left-radius: 15px; 
+        border-bottom-left-radius: 15px;
+        border: 1px var(--main-bg-color);
+        height: 50px;
+        width: 49px;
+        padding: 0px;
+    }
+
+    .search {
+        height: 21px;
+        width: 147px;
+        border : 1px var(--main-bg-color);
+        margin: 24px;
+        color: black;
+        font-size: 18px;
+        font-weight: 700;
+        outline: none /* Supprime la bordure lors de la séléction du champ */
+    }
+
+    .bouton_recherche {
+        background: var(--main-color);  
+        border-top-right-radius: 15px; 
+        border-bottom-right-radius: 15px;
+        border: 1px var(--main-color);
+        height: 50px;
+        width: 132px;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    
+    
+        
+    
+
 
 
 /****** Hebergements And Populaires ***********/
