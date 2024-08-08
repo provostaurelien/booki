@@ -64,6 +64,12 @@ h2 {
   font-size: 18px;
   font-weight: 700;
 }
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
 /****** Header ********/
 
 header {
@@ -104,11 +110,13 @@ main {
   padding: 0px 50px;
 }
 
+.recherche_filtre div{
+    margin: 35px 0px;
+}
+
 /****** Barre de recherche ***********/
 
-.search_bar {
-    margin-top: 35px;
-}
+
 .fa-location-dot {
   color: black;
 }
@@ -165,7 +173,6 @@ main {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    margin-top: 35px;
 }
 
 .Filtres button {
@@ -174,7 +181,7 @@ main {
     align-items: center;
     background: white;
     border-radius: 50px;
-    border: solid var(--main-bg-color);
+    border: solid var(--main-bg-color) 2px;
     font-size: 17px;
     font-weight: 700;
     padding: 4px 19px
@@ -184,7 +191,17 @@ main {
     background:#DEEBFF;
 }
 
+.nbre_recherche {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
 
+.fa-info{
+    border-radius: 50%;
+    border: solid var(--main-bg-color) 2px;
+    padding: 10px;
+}
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
