@@ -222,16 +222,15 @@ main {
 }
 
 .hebergements-cards {
-    display: flex;
-    flex-direction: raw;
-  flex-wrap: wrap;
-  align-items: stretch;/* Permet aux cartes de passer à la ligne suivante */
+    margin: 30px 0px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+
 }
 
 .hebergements-cards .card {
-
     box-sizing: border-box;
-    margin-bottom: 20px;
   }
 
   .hebergements-cards img {
