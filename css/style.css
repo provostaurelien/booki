@@ -353,7 +353,24 @@ main {
 
 /****** footer ***********/
   
+footer {
+    background-color: var(--main-bg-color);
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 58px;
+    padding: 0px 50px;
+}
 
+footer div {
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+    padding:20px;
+}
+
+footer h2 {
+    margin:0px;
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
