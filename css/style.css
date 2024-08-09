@@ -357,8 +357,8 @@ footer {
     background-color: var(--main-bg-color);
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 58px;
     padding: 0px 50px;
+    /*margin-bottom: 58px; Nécessaire???*/
 }
 
 footer div {
@@ -386,7 +386,11 @@ footer h2 {
 }
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) and (min-width: 767.99px) {
-  .hebergements-and-populaires {
+  .main-container {
+    padding: 0px;
+  }
+  
+    .hebergements-and-populaires {
     flex-direction: column;
   }
 
@@ -420,6 +424,13 @@ footer h2 {
     display: none;
   }
 }
+.activites-cards img {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
