@@ -60,6 +60,12 @@ a {
   color: var(--main-bg-color);
 }
 
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0px 0px 8px;
+}
+
 h2 {
   font-size: 18px;
   font-weight: 700;
@@ -74,6 +80,13 @@ h3 {
 p {
   font-size: 16px;
   font-weight: 400;
+  margin: 0px;
+}
+
+header,
+footer,
+main {
+  margin: 0px 50px;
 }
 
 /****** Header ********/
@@ -87,20 +100,22 @@ header {
 
 header img {
   height: 19px;
-  padding: 30px 50px;
+  padding: 30px 0px;
 }
 
-/* Style pour l'appbar à déplacer dans la partie responsive */
 .appBar_nav {
   display: flex;
-  gap: 68px;
-  padding: 0px 50px; /* permet de garder la marge de 50 sur le côté */
+}
+
+header nav {
+  display: flex;
+  gap: 68px; /* Espacement de 68px entre les liens */
 }
 
 .appBar_navItem {
   text-decoration: none;
   color: #000000;
-  padding: 30px 0px 30px; /* permet de garder centré le texte par rapport à l'îcone et d'avoir le trait en haut de l'écran */
+  padding: 30px 0px; /* permet de garder centré le texte par rapport à l'îcone et d'avoir le trait en haut de l'écran */
 }
 
 .appBar_navItem:hover {
@@ -112,12 +127,9 @@ header img {
 
 /* Style pour le main*/
 
-main {
-  padding: 0px 50px;
-}
-
 .recherche,
-.Filtres {
+.Filtres,
+.search_bar {
   margin: 35px 0px;
 }
 
@@ -178,12 +190,12 @@ main {
 .Filtres {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 15px;
 }
 
 .Filtres button {
   gap: 10px;
-  align-items: center;
   background: white;
   border-radius: 50px;
   border: solid var(--main-bg-color) 2px;
@@ -219,7 +231,8 @@ main {
   margin: 35px 0px;
 }
 
-.hebergements-and-populaires section {
+.hebergements,
+.populaires {
   background-color: var(--main-bg-color);
   border-radius: 20px;
   padding: 30px;
@@ -355,7 +368,6 @@ footer {
   background-color: var(--main-bg-color);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 0px 50px;
   /*margin-bottom: 58px; Nécessaire???*/
 }
 
@@ -373,11 +385,23 @@ footer h2 {
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
-/* High devices (computers) */
-@media (min-width: 1025px) {
-  .Filtres h2 {
-    display: inline;
+/* High resolution(desktop large) */
+@media (min-width: 1440px) {
+    /* Jestion marge à droite très importante */
+  body {
+    margin: 0px 400px 0px 60px;
   }
+  /* Non affichage de la loupe pour éviter affichage en doublon avec champ recherche */
+  .loupe {
+    display: none;
+  }
+}
+
+/* High devices (computers) */
+
+/* Non affichage de la loupe pour éviter affichage en doublon avec champ recherche */
+
+@media (min-width: 1025px) and (max-width: 1439px) {
   .loupe {
     display: none;
   }
@@ -387,6 +411,20 @@ footer h2 {
   .main-container {
     padding: 0px;
   }
+ /* Gestion barre de recherche et filtres */
+  .loupe {
+    display: none;
+  } 
+
+  .Filtres {
+    display: block;
+  }
+
+  .Filtres h2 {
+    margin-bottom: 20px;
+  }
+
+  /* Modification des blocs populaires et hébergements */
 
   .hebergements-and-populaires {
     flex-direction: column;
@@ -411,6 +449,10 @@ footer h2 {
     width: 30%;
   }
 
+  .populaires-cards .card {
+    margin-top: 20px;
+  }
+
   .populaires-cards .card-title {
     font-size: 14px;
   }
@@ -418,10 +460,11 @@ footer h2 {
   .populaires-cards .card-subtitle {
     font-size: 13px;
   }
-  .loupe {
-    display: none;
-  }
+
 }
+
+/* Modification du bloc activité */
+
 .activites-cards img {
   width: 100%;
   height: 200px;
@@ -431,52 +474,101 @@ footer h2 {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
+  /* Header fixe, plus propice à la vue mobile, cependantles appel href masque le titre via l'appel href, possibilité de réglé via un pseudo élément before mais nécessite l'utilisation du javasript*/
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* L'utilisation du margin semblé adéquate en vue desktop cependant si je veux conserver le background entier sur la partie hébergement je dois passer en paddind*/
+  .main-container {
+    padding: 0px;
+  }
+  header,
+  main,
+  footer {
+    margin: 0px;
+  }
+
+  .recherche,
+  .Filtres,
+  .resultat-recherche,
+  .nbre_recherche {
+    padding: 0px 20px;
+  }
+
+  .hebergements {
+    padding: 20px;
+  }
+  .activites {
+    padding: 30px;
+  }
+  .populaires {
+    padding: 30px 20px;
+  }
+
+  footer {
+    padding: 30px;
+  }
+
+  /* Masquage du bouton recherche pour affichage de la loupe*/
   .bouton_recherche {
     display: none;
   }
 
-  .main-container {
-    padding: 0px;
-  }
+  /* Gestion des chagements du heauder avec le replacement du logo et barre de nav*/
 
-  .hebergements-and-populaires {
+  header {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .hebergements {
+  header img {
+    padding: 30px;
+  }
+
+  header section {
     width: 100%;
   }
 
-  .populaires {
+  .appBar_navItem {
+    text-decoration: none;
+    color: #000000;
+    padding-bottom: 15px;
+    padding-top: 0px;
     width: 100%;
-    margin-top: 50px;
+  }
+/* Gestion du soulignement dynamique impossible sans javasript, systèe laissé équivalent à la version desktop */
+  .appBar_navItem:hover {
+    color: var(--main-color); /* Changement de couleur des lettres*/
+    position: relative;
+    border-top: none;
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 15px;
+    padding-top: 0px;
   }
 
-  .populaires-cards {
-    display: block;
+  nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid var(--main-bg-color);
   }
 
-  .populaires-cards a {
-    width: 30%;
+  /* Modification de la barre de recherche, peut mieux faire que du pourcentage pour vraiment adapter à l'écran? */
+
+  .search {
+    width: 50%;
   }
 
-  .populaires-cards .card-title {
-    font-size: 14px;
-  }
+  /* Modification de la partie filtre pour coller à la maquette */
 
-  .populaires-cards .card-subtitle {
-    font-size: 13px;
-  }
-  .activites-cards,
-  .hebergements-cards,
-  footer {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  footer,
-  main {
-    padding: 0px 20px;
-  }
   .button_filtres {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Deux colonnes de largeur égale */
@@ -487,8 +579,67 @@ footer h2 {
   .Filtres {
     display: flex;
     flex-direction: column;
+    justify-content: left;
+    align-items: normal;
     row-gap: 20px;
   }
 
-  /*manque augmentation search bar sur toute la longqueur et modification des boutons de navigation*/
+  /* inversion des catégories populaires et hébergement */
+
+  .hebergements-and-populaires {
+    flex-direction: column-reverse;
+  }
+
+  /* Passage de la grille et du flex sur une colonne + ajustement gap */
+
+  .activites-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .hebergements-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 30px 0px 15px 0px;
+  }
+
+  .hebergements {
+    background-color: white;
+    width: 100%;
+  }
+
+  .populaires {
+    width: 100%;
+    border-radius: 0px;
+    margin: 0px;
+  }
+
+  .populaires-cards {
+    display: block;
+  }
+
+  .populaires-cards a {
+    width: 30%;
+  }
+
+  /* Ajustement du pied de page avec passage sur une colonne */
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0px;
+  }
+
+  footer h2 {
+    margin: 0px;
+  }
 }

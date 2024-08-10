@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booki</title>
-    <!-- ajout de l'îcone dans l'onglet pour éviter erreur console, icone peut adaptée -->
+    <!-- ajout de l'îcone dans l'onglet pour éviter erreur console, icone peu adaptée -->
     <link rel="icon" href="./images/logo/Booki.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,12 +25,14 @@
     <div class="main-container">
       <header>
         <img src="./images/logo/Booki.png" />
-        <nav class="appBar_nav">
-          <a class="appBar_navItem active" href="#section-hebergement"
-            >Hébergements</a
-          >
-          <a class="appBar_navItem" href="#section-activites">Activités</a>
-        </nav>
+        <section class="appBar_nav">
+          <nav>
+            <a class="appBar_navItem active" href="#section-hebergement"
+              >Hébergements</a
+            >
+            <a class="appBar_navItem" href="#section-activites">Activités</a>
+          </nav>
+        </section>
       </header>
       <main>
         <section class="recherche">
@@ -42,7 +44,7 @@
             </button>
             <input type="text" name="localisation" class="search" />
             <input type="submit" value="rechercher" class="bouton_recherche" />
-            <!-- Impossible de mettre l'icone sous un champ submit action pouvant être gérée en javascript derrière-->
+            <!-- Impossible de mettre l'icone sous un champ submit action pouvant être gérée en javascript derrière, loupe seulement pour vue mobile-->
             <button class="loupe">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
