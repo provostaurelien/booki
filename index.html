@@ -25,31 +25,29 @@
     <div class="main-container">
       <header>
         <img src="./images/logo/Booki.png" alt="logo Booki">
-        <section class="appBar_nav">
-          <nav>
+          <nav class="appBar_nav">
             <a class="appBar_navItem active" href="#section-hebergement"
               >Hébergements</a
             >
             <a class="appBar_navItem" href="#section-activites">Activités</a>
           </nav>
-        </section>
       </header>
       <main>
-        <section class="recherche">
+        <div class="recherche">
           <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
           <p>En plein centre-ville ou en pleine nature</p>
-          <div class="search_bar">
+          <form class="search_bar">
             <button class="localisation">
               <i class="fa-solid fa-location-dot"></i>
             </button>
-            <input type="text" name="localisation" class="search">
+            <input type="text" name="localisation" class="search" placeholder="Marseille, France">
             <input type="submit" value="rechercher" class="bouton_recherche">
             <!-- Impossible de mettre l'icone sous un champ submit action pouvant être gérée en javascript derrière, loupe seulement pour vue mobile-->
             <button class="loupe">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-          </div>
-        </section>
+        </form>
+        </div>
         <section class="Filtres">
           <h2>Filtres</h2>
           <div class="button_filtres">
@@ -71,12 +69,12 @@
             </button>
           </div>
         </section>
-        <section class="Resultat_recherche">
+        <div class="Resultat_recherche">
           <div class="nbre_recherche">
             <i class="fa-solid fa-info fa-xs"></i>
             <p>Plus de 500 logements sont disponibles dans cette ville</p>
           </div>
-        </section>
+        </div>
         <div class="hebergements-and-populaires">
           <section class="hebergements" id="section-hebergement">
             <h2 class="section-title">Hébergements à Marseille</h2>

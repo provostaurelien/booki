@@ -1,645 +1,652 @@
 /****** General ***********/
 * {
-  font-family: "Raleway", sans-serif;
-}
-
-:root {
-  --main-color: #0065fc;
-  --main-bg-color: #f2f2f2;
-  --filter-bg-color: #deebff;
-}
-
-.fa-solid {
-  color: var(--main-color);
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  margin: 0px;
-  /* défini pour coller à la maquette, aucune espace avec le navigateur ne semble exister*/
-}
-
-.main-container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 50px;
-  box-sizing: border-box;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.section-title {
-  margin: 0;
-  font-size: 22px;
-}
-
-.card {
-  background-color: white;
-  border-radius: 20px;
-
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-}
-
-.card img {
-  object-fit: cover;
-}
-
-.card-title {
-  font-size: 16px;
-}
-
-.euro {
-  font-weight: 700;
-}
-
-.neutral-star {
-  color: var(--main-bg-color);
-}
-
-h1 {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0px 0px 8px;
-}
-
-h2 {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0px;
-}
-
-h3 {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0px;
-}
-
-header,
-footer,
-main {
-  margin: 0px 50px;
-}
-
-/****** Header ********/
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-}
-
-header img {
-  height: 19px;
-  padding: 30px 0px;
-}
-
-.appBar_nav {
-  display: flex;
-}
-
-header nav {
-  display: flex;
-  gap: 68px; /* Espacement de 68px entre les liens */
-}
-
-.appBar_navItem {
-  text-decoration: none;
-  color: #000000;
-  padding: 30px 0px; /* permet de garder centré le texte par rapport à l'îcone et d'avoir le trait en haut de l'écran */
-}
-
-.appBar_navItem:hover {
-  color: var(--main-color); /* Changement de couleur des lettres*/
-  position: relative;
-  border-top: 2px solid var(--main-color); /* Ajout de la barre bleue au dessus */
-  padding-top: 28px; /* Ajoute un espace pour compenser le décalage d'écriture futile??? */
-}
-
-/* Style pour le main*/
-
-.recherche,
-.Filtres,
-.search_bar {
-  margin: 35px 0px;
-}
-
-/****** Barre de recherche ***********/
-
-.fa-location-dot {
-  color: black;
-}
-
-.localisation {
-  background: var(--main-bg-color);
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border: 1px var(--main-bg-color);
-  height: 50px;
-  width: 49px;
-  padding: 0px;
-}
-
-.search {
-  height: 21px;
-  width: 147px;
-  border: 1px var(--main-bg-color);
-  margin: 24px;
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
-  outline: none; /* Supprime la bordure lors de la séléction du champ */
-}
-
-.bouton_recherche {
-  background: var(--main-color);
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border: 1px var(--main-color);
-  height: 50px;
-  width: 132px;
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.loupe {
-  background: var(--main-color);
-  border-radius: 15px;
-  border: 1px var(--main-bg-color);
-  height: 50px;
-  width: 49px;
-  padding: 0px;
-}
-
-.fa-magnifying-glass {
-  color: white;
-}
-
-/****** Filtres ***********/
-
-.Filtres {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-}
-
-.Filtres button {
-  gap: 10px;
-  background: white;
-  border-radius: 50px;
-  border: solid var(--main-bg-color) 2px;
-  font-size: 17px;
-  font-weight: 700;
-  padding: 4px 19px;
-}
-
-.Filtres button:hover {
-  background: #deebff;
-}
-
-.nbre_recherche {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.fa-info {
-  border-radius: 50%;
-  border: solid var(--main-bg-color) 2px;
-  padding: 10px;
-}
-
-.resultat-recherche {
-  display: flex;
-}
-
-/****** Hebergements And Populaires ***********/
-.hebergements-and-populaires {
-  display: flex;
-  justify-content: space-between;
-  margin: 35px 0px;
-}
-
-.hebergements,
-.populaires {
-  background-color: var(--main-bg-color);
-  border-radius: 20px;
-  padding: 30px;
-  box-sizing: border-box;
-}
-
-.hebergements-and-populaires .card {
-  padding: 5px;
-}
-
-/****** Hebergements ***********/
-.hebergements {
-  width: 65%;
-}
-
-.hebergements-cards {
-  margin: 30px 0px;
-  display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* en remplacement de grid-template-columns: 1fr 1fr 1fr */
-  gap: 30px;
-}
-
-.hebergements-cards img {
-  width: 100%;
-  height: 112px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.hebergements-cards .card-content {
-  padding: 0px 15px;
-  margin-top: 4px;
-}
-
-.hebergements-cards h3 {
-  margin-top: 0px;
-  margin-bottom: 8px;
-}
-
-.hebergements-cards .card-subtitle {
-  margin-top: 0px;
-  margin-bottom: 8px;
-}
-
-.hebergements-cards .card-rating {
-  margin-bottom: 5px;
-}
-
-.afficher-plus h3 {
-  margin: 0px;
-}
-
-/****** Populaires ***********/
-.populaires {
-  width: 32%;
-}
-
-.populaires-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.populaires-cards .card {
-  display: flex;
-  margin-top: 33px;
-}
-
-.populaires-cards img {
-  width: 33%;
-  height: 136px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.populaires-cards .card-content {
-  width: 67%;
-  padding-left: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.populaires-cards .card-title {
-  margin-top: 10px;
-  margin-bottom: 4px;
-}
-
-.populaires-cards .card-subtitle {
-  margin: 0;
-}
-
-.populaires-cards .card-rating {
-  margin-bottom: 5px;
-}
-
-/****** Activités ***********/
-
-.activites {
-  padding: 30px;
-  margin-top: 35px;
-}
-
-.activites-cards {
-  margin: 30px 0px;
-  display: grid;
-  grid-template-columns: repeat(
-    4,
-    1fr
-  ); /* en remplacement de grid-template-columns: 1fr 1fr 1fr 1fr */
-  gap: 30px;
-}
-
-.activites-cards img {
-  width: 100%;
-  height: 380px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.activites-cards h3 {
-  padding: 20px 19px;
-  margin: 0px;
-}
-
-/****** footer ***********/
-
-footer {
-  background-color: var(--main-bg-color);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /*margin-bottom: 58px; Nécessaire???*/
-}
-
-footer div {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-}
-
-footer h2 {
-  margin: 0px;
-}
-
-/* Le code ci-dessous correspond à la version responsive uniquement */
-
-/****** Media queries ***********/
-/* High resolution(desktop large) */
-@media (min-width: 1440px) {
-    /* Jestion marge à droite très importante */
+    font-family: "Raleway", sans-serif;
+  }
+  
+  :root {
+    --main-color: #0065fc;
+    --main-bg-color: #f2f2f2;
+    --filter-bg-color: #deebff;
+  }
+  
+  .fa-solid {
+    color: var(--main-color);
+  }
+  
   body {
-    margin: 0px 400px 0px 60px;
-  }
-  /* Non affichage de la loupe pour éviter affichage en doublon avec champ recherche */
-  .loupe {
-    display: none;
-  }
-}
-
-/* High devices (computers) */
-
-/* Non affichage de la loupe pour éviter affichage en doublon avec champ recherche */
-
-@media (min-width: 1025px) and (max-width: 1439px) {
-  .loupe {
-    display: none;
-  }
-}
-/* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) and (min-width: 767.99px) {
-  .main-container {
-    padding: 0px;
-  }
- /* Gestion barre de recherche et filtres */
-  .loupe {
-    display: none;
-  } 
-
-  .Filtres {
-    display: block;
-  }
-
-  .Filtres h2 {
-    margin-bottom: 20px;
-  }
-
-  /* Modification des blocs populaires et hébergements */
-
-  .hebergements-and-populaires {
-    flex-direction: column;
-  }
-
-  .hebergements {
-    width: 100%;
-  }
-
-  .populaires {
-    width: 100%;
-    margin-top: 50px;
-  }
-
-  .populaires-cards {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 0px;
+    /* défini pour coller à la maquette, aucune espace avec le navigateur ne semble exister*/
   }
-
-  .populaires-cards a {
-    width: 30%;
-  }
-
-  .populaires-cards .card {
-    margin-top: 20px;
-  }
-
-  .populaires-cards .card-title {
-    font-size: 14px;
-  }
-
-  .populaires-cards .card-subtitle {
-    font-size: 13px;
-  }
-
-}
-
-/* Modification du bloc activité */
-
-.activites-cards img {
-  width: 100%;
-  height: 200px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-  /* Header fixe, plus propice à la vue mobile, cependantles appel href masque le titre via l'appel href, possibilité de réglé via un pseudo élément before mais nécessite l'utilisation du javasript*/
-
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  /* L'utilisation du margin semblé adéquate en vue desktop cependant si je veux conserver le background entier sur la partie hébergement je dois passer en paddind*/
+  
   .main-container {
-    padding: 0px;
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
   }
-  header,
-  main,
-  footer {
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .section-title {
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 20px;
+  
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  }
+  
+  .card img {
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .euro {
+    font-weight: 700;
+  }
+  
+  .neutral-star {
+    color: var(--main-bg-color);
+  }
+  
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0px 0px 8px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
     margin: 0px;
   }
-
-  .recherche,
-  .Filtres,
-  .resultat-recherche,
-  .nbre_recherche {
-    padding: 0px 20px;
+  
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
   }
-
-  .hebergements {
-    padding: 20px;
+  
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;
   }
-  .activites {
-    padding: 30px;
+  
+  header,
+  footer,
+  main {
+    margin: 0px 50px;
   }
-  .populaires {
-    padding: 30px 20px;
-  }
-
-  footer {
-    padding: 30px;
-  }
-
-  /* Masquage du bouton recherche pour affichage de la loupe*/
-  .bouton_recherche {
-    display: none;
-  }
-
-  /* Gestion des chagements du heauder avec le replacement du logo et barre de nav*/
-
+  
+  /****** Header ********/
+  
   header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    background-color: white;
   }
-
+  
   header img {
-    padding: 30px;
+    height: 19px;
+    padding: 30px 0px;
   }
-
-  header section {
-    width: 100%;
+  
+  .appBar_nav {
+    display: flex;
   }
-
+  
+  header nav {
+    display: flex;
+    gap: 68px; /* Espacement de 68px entre les liens */
+  }
+  
   .appBar_navItem {
     text-decoration: none;
     color: #000000;
-    padding-bottom: 15px;
-    padding-top: 0px;
-    width: 100%;
+    padding: 30px 0px; /* permet de garder centré le texte par rapport à l'îcone et d'avoir le trait en haut de l'écran */
+    border-top: 2px solid transparent;
   }
-/* Gestion du soulignement dynamique impossible sans javasript, systèe laissé équivalent à la version desktop */
+  
   .appBar_navItem:hover {
     color: var(--main-color); /* Changement de couleur des lettres*/
     position: relative;
-    border-top: none;
-    border-bottom: 2px solid var(--main-color);
-    padding-bottom: 15px;
-    padding-top: 0px;
+    border-top: 2px solid var(--main-color); /* Ajout de la barre bleue au dessus */
   }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-bottom: 2px solid var(--main-bg-color);
+  
+  /* Style pour le main*/
+  
+  .recherche,
+  .Filtres,
+  .search_bar {
+    margin: 35px 0px;
   }
-
-  /* Modification de la barre de recherche, peut mieux faire que du pourcentage pour vraiment adapter à l'écran? */
-
+  
+  /****** Barre de recherche ***********/
+  
+  .fa-location-dot {
+    color: black;
+  }
+  
+  .localisation {
+    background: var(--main-bg-color);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px var(--main-bg-color);
+    height: 50px;
+    width: 49px;
+    padding: 0px;
+  }
+  
   .search {
-    width: 50%;
+    height: 21px;
+    width: 147px;
+    border: 1px var(--main-bg-color);
+    margin: 24px;
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    outline: none; /* Supprime la bordure lors de la séléction du champ */
   }
-
-  /* Modification de la partie filtre pour coller à la maquette */
-
-  .button_filtres {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes de largeur égale */
-    row-gap: 20px;
-    column-gap: 10px; /* Espace entre les boutons, ajustable selon vos besoins */
-    margin: 0px;
+  
+  ::placeholder {
+      color: black;
+    font-size: 18px;
+    font-weight: 700;
   }
+  
+  .bouton_recherche {
+    background: var(--main-color);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px var(--main-color);
+    height: 50px;
+    width: 132px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .loupe {
+    background: var(--main-color);
+    border-radius: 15px;
+    border: 1px var(--main-bg-color);
+    height: 50px;
+    width: 49px;
+    padding: 0px;
+  }
+  
+  .fa-magnifying-glass {
+    color: white;
+  }
+  
+  /****** Filtres ***********/
+  
   .Filtres {
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: normal;
-    row-gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
   }
-
-  /* inversion des catégories populaires et hébergement */
-
+  
+  .Filtres button {
+    gap: 10px;
+    background: white;
+    border-radius: 50px;
+    border: solid var(--main-bg-color) 2px;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 4px 19px;
+  }
+  
+  .Filtres button:hover {
+    background: #deebff;
+  }
+  
+  .nbre_recherche {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .fa-info {
+    border-radius: 50%;
+    border: solid var(--main-bg-color) 2px;
+    padding: 10px;
+  }
+  
+  .resultat-recherche {
+    display: flex;
+  }
+  
+  /****** Hebergements And Populaires ***********/
   .hebergements-and-populaires {
-    flex-direction: column-reverse;
+    display: flex;
+    justify-content: space-between;
+    margin: 35px 0px;
   }
-
-  /* Passage de la grille et du flex sur une colonne + ajustement gap */
-
-  .activites-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .hebergements-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin: 30px 0px 15px 0px;
-  }
-
-  .hebergements {
-    background-color: white;
-    width: 100%;
-  }
-
+  
+  .hebergements,
   .populaires {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  
+  .hebergements-and-populaires .card {
+    padding: 5px;
+  }
+  
+  /****** Hebergements ***********/
+  .hebergements {
+    width: 65%;
+  }
+  
+  .hebergements-cards {
+    margin: 30px 0px;
+    display: grid;
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* en remplacement de grid-template-columns: 1fr 1fr 1fr */
+    gap: 30px;
+  }
+  
+  .hebergements-cards img {
     width: 100%;
-    border-radius: 0px;
+    height: 112px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .hebergements-cards .card-content {
+    padding: 0px 15px;
+    margin-top: 4px;
+  }
+  
+  .hebergements-cards h3 {
+    margin-top: 0px;
+    margin-bottom: 8px;
+  }
+  
+  .hebergements-cards .card-subtitle {
+    margin-top: 0px;
+    margin-bottom: 8px;
+  }
+  
+  .hebergements-cards .card-rating {
+    margin-bottom: 5px;
+  }
+  
+  .afficher-plus h3 {
     margin: 0px;
   }
-
-  .populaires-cards {
-    display: block;
+  
+  /****** Populaires ***********/
+  .populaires {
+    width: 32%;
   }
-
-  .populaires-cards a {
-    width: 30%;
+  
+  .populaires-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-
-  /* Ajustement du pied de page avec passage sur une colonne */
-
-  footer {
+  
+  .populaires-cards .card {
+    display: flex;
+    margin-top: 33px;
+  }
+  
+  .populaires-cards img {
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  
+  .populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+  .populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  
+  .populaires-cards .card-subtitle {
+    margin: 0;
+  }
+  
+  .populaires-cards .card-rating {
+    margin-bottom: 5px;
+  }
+  
+  /****** Activités ***********/
+  
+  .activites {
+    padding: 30px;
+    margin-top: 35px;
+  }
+  
+  .activites-cards {
+    margin: 30px 0px;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* en remplacement de grid-template-columns: 1fr 1fr 1fr 1fr */
+    gap: 30px;
   }
-
+  
+  .activites-cards img {
+    width: 100%;
+    height: 380px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .activites-cards h3 {
+    padding: 20px 19px;
+    margin: 0px;
+  }
+  
+  /****** footer ***********/
+  
+  footer {
+    background-color: var(--main-bg-color);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*margin-bottom: 58px; Nécessaire???*/
+  }
+  
   footer div {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 0px;
+    padding: 20px;
   }
-
+  
   footer h2 {
     margin: 0px;
   }
-}
+  
+  /* Le code ci-dessous correspond à la version responsive uniquement */
+  
+  /****** Media queries ***********/
+  /* High resolution(desktop large) */
+  @media (min-width: 1440px) {
+      /* Gestion marge à droite très importante  à revoir*/
+    body {
+      margin: 0% 15%;
+    }
+    /* Non affichage de la loupe pour éviter affichage en doublon avec champ recherche */
+    .loupe {
+      display: none;
+    }
+  }
+  
+  /* High devices (computers) */
+  
+  /* Non affichage de la loupe pour éviter affichage en doublon avec champ recherche */
+  
+  @media (min-width: 1025px) and (max-width: 1439px) {
+    .loupe {
+      display: none;
+    }
+  }
+  /* Medium devices (tablets, less/equal than 1024px) */
+  @media (max-width: 1024px) and (min-width: 767.99px) {
+    .main-container {
+      padding: 0px;
+    }
+   /* Gestion barre de recherche et filtres */
+    .loupe {
+      display: none;
+    } 
+  
+    .Filtres {
+      display: block;
+    }
+  
+    .Filtres h2 {
+      margin-bottom: 20px;
+    }
+  
+    /* Modification des blocs populaires et hébergements */
+  
+    .hebergements-and-populaires {
+      flex-direction: column;
+    }
+  
+    .hebergements {
+      width: 100%;
+    }
+  
+    .populaires {
+      width: 100%;
+      margin-top: 50px;
+    }
+  
+    .populaires-cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .populaires-cards a {
+      width: 30%;
+    }
+  
+    .populaires-cards .card {
+      margin-top: 20px;
+    }
+  
+    .populaires-cards .card-title {
+      font-size: 14px;
+    }
+  
+    .populaires-cards .card-subtitle {
+      font-size: 13px;
+    }
+  
+  }
+  
+  /* Modification du bloc activité */
+  
+  .activites-cards img {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  /* Small devices (phones, less than 768px) */
+  @media (max-width: 767.98px) {
+    /* Header fixe, plus propice à la vue mobile, cependantles appel href masque le titre via l'appel href, possibilité de réglé via un pseudo élément before mais nécessite l'utilisation du javasript*/
+  
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+  
+    /* L'utilisation du margin semblé adéquate en vue desktop cependant si je veux conserver le background entier sur la partie hébergement je dois passer en paddind*/
+    .main-container {
+      padding: 0px;
+    }
+    header,
+    main,
+    footer {
+      margin: 0px;
+    }
+  
+    .recherche,
+    .Filtres,
+    .resultat-recherche,
+    .nbre_recherche {
+      padding: 0px 20px;
+    }
+  
+    .hebergements {
+      padding: 20px;
+    }
+    .activites {
+      padding: 30px;
+    }
+    .populaires {
+      padding: 30px 20px;
+    }
+  
+    footer {
+      padding: 30px;
+    }
+  
+    /* Masquage du bouton recherche pour affichage de la loupe*/
+    .bouton_recherche {
+      display: none;
+    }
+  
+    /* Gestion des chagements du heauder avec le replacement du logo et barre de nav*/
+  
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    header img {
+      padding: 30px;
+    }
+  
+    header section {
+      width: 100%;
+    }
+  
+    .appBar_navItem {
+      text-decoration: none;
+      color: #000000;
+      padding-bottom: 15px;
+      padding-top: 0px;
+      width: 100%;
+    }
+  /* Gestion du soulignement dynamique impossible sans javasript, systèe laissé équivalent à la version desktop */
+    .appBar_navItem:hover {
+      color: var(--main-color); /* Changement de couleur des lettres*/
+      position: relative;
+      border-top: none;
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 15px;
+      padding-top: 0px;
+    }
+  
+    nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      border-bottom: 2px solid var(--main-bg-color);
+    }
+  
+    /* Modification de la barre de recherche, peut mieux faire que du pourcentage pour vraiment adapter à l'écran? */
+  
+    .search {
+      width: 50%;
+    }
+  
+    /* Modification de la partie filtre pour coller à la maquette */
+  
+    .button_filtres {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Deux colonnes de largeur égale */
+      row-gap: 20px;
+      column-gap: 10px; /* Espace entre les boutons, ajustable selon vos besoins */
+      margin: 0px;
+    }
+    .Filtres {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: normal;
+      row-gap: 20px;
+    }
+  
+    /* inversion des catégories populaires et hébergement */
+  
+    .hebergements-and-populaires {
+      flex-direction: column-reverse;
+    }
+  
+    /* Passage de la grille et du flex sur une colonne + ajustement gap */
+  
+    .activites-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .hebergements-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 30px 0px 15px 0px;
+    }
+  
+    .hebergements {
+      background-color: white;
+      width: 100%;
+    }
+  
+    .populaires {
+      width: 100%;
+      border-radius: 0px;
+      margin: 0px;
+    }
+  
+    .populaires-cards {
+      display: block;
+    }
+  
+    .populaires-cards a {
+      width: 30%;
+    }
+  
+    /* Ajustement du pied de page avec passage sur une colonne */
+  
+    footer {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  
+    footer div {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 0px;
+    }
+  
+    footer h2 {
+      margin: 0px;
+    }
+  }
+  
