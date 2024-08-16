@@ -107,21 +107,20 @@
     display: flex;
   }
   
-  header nav {
-    display: flex;
+  header ul {
     gap: 68px; /* Espacement de 68px entre les liens */
+    list-style-type: none;
+    padding-left : 0% /* Compensation pour éviter la présence de décalage du à l'ul en anticipant la vue mobile */
   }
   
   .appBar_navItem {
     text-decoration: none;
     color: #000000;
-    padding: 30px 0px; /* permet de garder centré le texte par rapport à l'îcone et d'avoir le trait en haut de l'écran */
-    border-top: 2px solid transparent;
+    padding: 28px 0px; 
   }
-  
+  /* Simplification du code en passant de nav à ul, permet d'éviter les décalages lors du passage de la souris */
   .appBar_navItem:hover {
     color: var(--main-color); /* Changement de couleur des lettres*/
-    position: relative;
     border-top: 2px solid var(--main-color); /* Ajout de la barre bleue au dessus */
   }
   
@@ -560,11 +559,13 @@
       padding-top: 0px;
     }
   
-    nav {
+    ul {
       display: flex;
       justify-content: center;
       width: 100%;
+      padding-bottom: 15px;
       border-bottom: 2px solid var(--main-bg-color);
+      list-style-type: none;
     }
   
     /* Modification de la barre de recherche, peut mieux faire que du pourcentage pour vraiment adapter à l'écran? */
