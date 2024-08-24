@@ -470,7 +470,7 @@ footer h2 {
   .bouton_recherche {
     display: none;
   }
-  /* Gestion des changements du header avec le replacement du logo et barre de nav*/
+  /* Gestion des chagements du header avec le replacement du logo et barre de nav*/
   header {
     display: flex;
     flex-direction: column;

@@ -528,49 +528,48 @@
       display: none;
     }
   
-    /* Gestion des chagements du heauder avec le replacement du logo et barre de nav*/
+    /* Gestion des changements du header avec le replacement du logo et barre de nav*/
   
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      img {
-        padding: 30px;
-      }
-      section {
-        width: 100%;
-      }
-    }
-  
-
-  
-    .appBar_navItem {
-      text-decoration: none;
-      color: #000000;
-      padding-bottom: 15px;
-      padding-top: 0px;
-      width: 100%;
-
-      &:hover {
-        color: var(--main-color); /* Changement de couleur des lettres*/
-        position: relative;
-        border-top: none;
-        border-bottom: 2px solid var(--main-color);
-        padding-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        ul{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            gap: 0px
+          }
+        img {
+            padding: 30px;
+            }
+        }
+      
+ 
+      
+        .appBar_navItem {
+        text-decoration: none;
+        color: #000000;
         padding-top: 0px;
-      }
-    }
-  
-  
-    ul {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      padding-bottom: 15px;
-      border-bottom: 2px solid var(--main-bg-color);
-      list-style-type: none;
-    }
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--main-bg-color);
+        display: block;
+        width: 100%; 
+         &:hover {
+                color: var(--main-color); /* Changement de couleur des lettres */
+                border: none; /* Supprime toutes les bordures par défaut */
+                border-bottom: 2px solid var(--main-color); /* Ajout du soulignement uniquement en bas */
+                }
+        }
+        
+        
+      
+        ul li {
+          flex: 1; 
+        }
   
     /* Modification de la barre de recherche, peut mieux faire que du pourcentage pour vraiment adapter à l'écran? */
   
